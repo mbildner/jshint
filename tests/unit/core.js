@@ -1300,3 +1300,14 @@ exports.beginningArraysAreNotJSON = function (test) {
   test.done();
 
 };
+
+// gh-2183 destructuring params collection counts as multiple params
+exports.destructuredArgsCount = function (test) {
+  var src = fs.readFileSync(__dirname + "/fixtures/gh-2183.js", "utf8");
+
+  TestRun(test)
+  .test(src, { maxparams: 0, esnext: true });
+
+  test.done();
+
+};

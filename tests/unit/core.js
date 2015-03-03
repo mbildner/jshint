@@ -1300,3 +1300,16 @@ exports.beginningArraysAreNotJSON = function (test) {
   test.done();
 
 };
+
+exports.quickDemo = function (test) {
+  var src = fs.readFileSync(__dirname + "/fixtures/classEndInfiniteLoop.js");
+
+  TestRun(test)
+    .addError(1, "Unexpected '(end)'.")
+    .addError(1, "Expected '}' and instead saw ''.")
+    .test(src, { esnext: true });
+
+  test.done();
+
+
+};

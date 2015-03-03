@@ -3713,7 +3713,7 @@ var JSHINT = (function() {
       } else {
         warning("W052", state.tokens.next, state.tokens.next.value || state.tokens.next.type);
         advance();
-        continue;
+        break;
       }
 
       if (!checkPunctuators(state.tokens.next, ["("])) {
